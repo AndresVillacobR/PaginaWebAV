@@ -37,14 +37,16 @@ block content %}
               href="{{ url_for('editar', codsede=sede[0]) }}"
               class="btn btn-sm btn-primary me-2"
             >
-              ✏️ Editar
+              <!--✏️ -->
+              Editar
             </a>
             <a
               href="{{ url_for('eliminar', codsede=sede[0]) }}"
               class="btn btn-sm btn-danger"
               onclick="return confirm('⚠️ ¿Estás seguro de eliminar esta sede? Esta acción no se puede deshacer.');"
             >
-              🗑️ Eliminar
+              <!--🗑️ -->
+              Eliminar
             </a>
           </td>
         </tr>
