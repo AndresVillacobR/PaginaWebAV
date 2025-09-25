@@ -1,22 +1,29 @@
 {% extends 'base.html' %}
 
-{% block title %}Sedes - Editar{% endblock %}
+{% block title %}Editar Sede{% endblock %}
 
 {% block content %}
 <br>
 <h2>Editar la Sede</h2>
-<form action="/editar/{{ codsede }}" method="POST">
-<label for="codsede">Codigo de la Sede</label><br>
-<input type="number" id="codsede" name="codsede" value="{{ codsede }}" readonly><br><br>
 
-<label for="desede">Descripcion Sede</label><br>
-<input type="text" id="desede" name="desede" value="{{ desede }}"><br><br>
+<form action="/editar/{{ codsede }}" method="POST" class="form-editar">
+  <div class="form-group">
+    <label for="codsede">Código de la Sede</label>
+    <input type="number" id="codsede" name="codsede" value="{{ codsede }}" readonly>
+  </div>
 
-<label for="dirsede">Direccion Sede</label><br>
-<input type="text" id="dirsede" name="dirsede" value="{{ dirsede }}"><br><br><br>
+  <div class="form-group">
+    <label for="desede">Descripción de la Sede</label>
+    <input type="text" id="desede" name="desede" value="{{ desede }}" required>
+  </div>
 
-<input type="submit" value="Actualizar Sede">
+  <div class="form-group">
+    <label for="dirsede">Dirección de la Sede</label>
+    <input type="text" id="dirsede" name="dirsede" value="{{ dirsede }}" required>
+  </div>
+
+  <div class="espaciobotones"></div>
+
+  <button type="submit" class="btn-actualizar">Actualizar Sede</button>
 </form>
-
-<div class="espaciobotones"></div>
-</form>
+{% endblock %}

@@ -1,41 +1,56 @@
 {% extends 'base.html' %}
 
-{% block title %}Listado Sedes{% endblock %}
+{% block title %}Listado de Sedes{% endblock %}
 
 {% block content %}
-<br>
-<h2>Nuestras Sedes-ANDRES VILLACOB</h2>
-<br>
-<table class="table table-bordered table-striped">
-   <thead>
-    <tr>
-      <th>Código Sede</th>
-      <th>Descripción Sede</th>
-      <th>Dirección Sede</th>
-      <th>ID Ciudad</th>
-      <th>Descripción Ciudad</th>
-      <th>Eliminar</th>
-      <th>Editar</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for sede in sedes %}
-    <tr>
-      <td>{{ sede[0] }}</td> 
-      <td>{{ sede[1] }}</td> 
-      <td>{{ sede[2] }}</td> 
-      <td>{{ sede[3] }}</td> 
-      <td>{{ sede[4] }}</td> 
-      <td><a href="{{ url_for('eliminar', codsede=sede[0]) }}">Eliminar</a></td>
-      <td><a href="{{ url_for('editar', codsede=sede[0]) }}">Editar</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-<div> 
-    
+<div class="container mt-4">
+
+  <h2 class="mb-4 text-center">Nuestras Sedes - ANDRES VILLACOB</h2>
+
+  <!-- Botón Crear Sede -->
+  <div class="text-end mb-3">
+    <a href="{{ url_for('sedes') }}" class="btn btn-success">
+     <!--➕--> Crear Sede
+    </a>
+  </div>
+
+  <!-- Tabla de sedes -->
+  <div class="table-responsive shadow-sm rounded">
+    <table class="table table-hover align-middle text-center">
+      <thead class="table-success">
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">ID Ciudad</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sede in sedes %}
+        <tr>
+          <td>{{ sede[0] }}</td>
+          <td>{{ sede[1] }}</td>
+          <td>{{ sede[2] }}</td>
+          <td>{{ sede[3] }}</td>
+          <td>{{ sede[4] }}</td>
+          <td>
+            <a href="{{ url_for('editar', codsede=sede[0]) }}" class="btn btn-sm btn-primary me-2">
+              ✏️ Editar
+            </a>
+            <a href="{{ url_for('eliminar', codsede=sede[0]) }}" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta sede?');">
+              🗑️ Eliminar
+            </a>
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="6" class="text-muted">No hay sedes registradas aún.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
-
-
-
 {% endblock %}

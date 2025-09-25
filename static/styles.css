@@ -1,70 +1,185 @@
-/* Estilos para el contenedor del logo de la universidad */
+/* =========================
+   🎓 ENCABEZADO Y LOGO
+========================= */
 .fusion-logo {
   background-color: #0d2a52; 
-  padding: 10px 0 10px 20px; 
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
 }
 
-/* Estilos para la imagen del logo dentro del contenedor */
 .fusion-logo img {
-  max-width: 220px; 
+  max-width: 200px;
   height: auto;
-       
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Estilos para el pie de página */
+.fusion-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   📑 TITULOS
+========================= */
+h2 {
+  text-align: center;
+  color: #0d2a52;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* =========================
+   📋 FORMULARIOS
+========================= */
+form.mb-4 {
+  background: #f4f8fb;
+  padding: 28px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(13, 42, 82, 0.07);
+  margin: 0 auto 32px auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+form .form-label {
+  font-weight: 600;
+  color: #0d2a52;
+  font-size: 1.05rem;
+}
+
+form .form-control {
+  border-radius: 8px;
+  border: 1px solid #b6c6d6;
+  font-size: 1rem;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+form .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
+}
+
+/* Botones dentro del formulario */
+.form-botones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.form-botones form {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+/* =========================
+   📊 TABLAS
+========================= */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.table thead {
+  background: #198754;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f9f4;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+.table td a.btn {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+/* =========================
+   📱 RESPONSIVIDAD
+========================= */
+@media (max-width: 992px) {
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  form.mb-4 {
+    padding: 20px;
+  }
+
+  .table td, .table th {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fusion-logo img {
+    max-width: 160px;
+  }
+
+  .table-responsive {
+    border: none;
+  }
+
+  table.table {
+    font-size: 0.85rem;
+  }
+
+  .form-botones {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  form.mb-4 {
+    padding: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .table td, .table th {
+    padding: 6px;
+  }
+}
+
+/* =========================
+   📍 PIE DE PÁGINA
+========================= */
 footer {
-  background: #f8f9fa;           
-  text-align: center;            
-  padding: 20px 0 10px 0;        
-  margin-top: 40px;              
-  color: #222;                   
-  font-size: 1rem;               
+  background: #f8f9fa;
+  text-align: center;
+  padding: 20px 0 10px;
+  margin-top: 40px;
+  color: #222;
+  font-size: 1rem;
   border-top: 1px solid #e1e1e1;
 }
 
-/* Estilos para el formulario de sedes */
-form.mb-4 {
-  background: #f4f8fb;                               
-  padding: 28px 24px 18px 24px;                      
-  border-radius: 12px;                              
-  box-shadow: 0 2px 8px rgba(13, 42, 82, 0.07);      
-  margin-bottom: 32px;                               
-  max-width: 500px;                                  
-  margin-left: auto;                                 
-  margin-right: auto;
+footer a {
+  color: #0d2a52;
+  text-decoration: none;
 }
 
-/* Estilos para las etiquetas de los campos del formulario */
-form .form-label {
-  font-weight: 500; 
-  color: #0d2a52;   
-}
-
-/* Estilos para los campos de entrada del formulario */
-form .form-control {
-  border-radius: 6px;          
-  border: 1px solid #b6c6d6;    
-  font-size: 1rem; 
-}
-
-/* Estilos para el título principal */
-h2 {
-  text-align: center;   
-  color: #0d2a52;       
-  margin-bottom: 24px;  
-}
-
-/* Alinear los botones del formulario de sedes en una fila */
-.form-botones {
-  display: flex;     
-  gap: 12px;         
-  margin-top: 8px;
-
-}
-
-/* Ajuste para que los formularios secundarios no tengan margen ni padding extra */
-.form-botones form {
-  margin: 0;    
-  padding: 0;    
-  display: inline; 
+footer a:hover {
+  text-decoration: underline;
 }

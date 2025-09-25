@@ -256,35 +256,45 @@ if __name__ == "__main__":
 def editar(codsede):
     conn = db.create_connection()
     cursor = conn.cursor()
+
     if request.method == 'POST':
         desede = request.form['desede']
         dirsede = request.form['dirsede']
+
         sql = "UPDATE sede SET descripcion = %s, direccion = %s WHERE IdSede = %s"
         data = (desede, dirsede, codsede)
+
         try:
             cursor.execute(sql, data)
             conn.commit()
-            print("Registro actualizado correctamente")
+            print("✅ Registro actualizado correctamente")
         except Exception as e:
-            print(f"Error al actualizar el registro: {e}")
+            print(f"❌ Error al actualizar el registro: {e}")
         finally:
             cursor.close()
             conn.close()
             return redirect('/listasedes')
-        
+
     else:
         sql = "SELECT descripcion, direccion FROM sede WHERE IdSede = %s"
         try:
             cursor.execute(sql, (codsede,))
             sede = cursor.fetchone()
-            print("Registro obtenido correctamente")
+            print("✅ Registro obtenido correctamente")
         except Exception as e:
-            print(f"Error al obtener el registro: {e}")
+            print(f"❌ Error al obtener el registro: {e}")
             sede = None
         finally:
             cursor.close()
             conn.close()
-            if sede:
-                return render_template('editar.html', codsede=codsede, desede=sede[0], dirsede=sede[1])
-            else:
-                return "Sede no encontrada", 404 
+
+        if sede:
+            return render_template(
+                'editar.html',
+                codsede=codsede,
+                desede=sede[0],
+                dirsede=sede[1]
+            )
+        else:
+            return "Sede no encontrada", 404
+
