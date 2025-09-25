@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Registro de Ciudad{% endblock %}
+
+{% block content %}
+<br>
+<h2>CIUDADES</h2>
+<form action="/ciudades" method="POST" class="mb-4">
+  <div class="mb-3">
+   
+  <div class="mb-3">
+    <label for="idCiudad" class="form-label">ID Ciudad</label>
+    <input type="number" id="idCiudad" name="idCiudad" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="descCiudad" class="form-label">Descripción Ciudad</label>
+    <input type="text" id="descCiudad" name="descCiudad" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Agregar Ciudad</button>
+</form>
+<br>
+<br>
+
+
+<form action="/listaciudades" method="GET">
+  <button type="submit" class="btn btn-secondary">Ver Listado de Ciudades</button>
+</form>
+{% endblock %}

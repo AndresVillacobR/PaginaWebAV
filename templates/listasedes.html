@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado Sedes{% endblock %}
+
+{% block content %}
+<br>
+<h2>Nuestras Sedes-ANDRES VILLACOB</h2>
+<br>
+<table class="table table-bordered table-striped">
+   <thead>
+    <tr>
+      <th>Código Sede</th>
+      <th>Descripción Sede</th>
+      <th>Dirección Sede</th>
+      <th>ID Ciudad</th>
+      <th>Descripción Ciudad</th>
+      <th>Eliminar</th>
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for sede in sedes %}
+    <tr>
+      <td>{{ sede[0] }}</td> 
+      <td>{{ sede[1] }}</td> 
+      <td>{{ sede[2] }}</td> 
+      <td>{{ sede[3] }}</td> 
+      <td>{{ sede[4] }}</td> 
+      <td><a href="{{ url_for('eliminar', codsede=sede[0]) }}">Eliminar</a></td>
+      <td><a href="{{ url_for('editar', codsede=sede[0]) }}">Editar</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div> 
+    
+</div>
+
+
+
+{% endblock %}

@@ -1,16 +1,35 @@
 {% extends 'base.html' %}
 
-{% block title%}Sedes{%endblock%}
+{% block title %}Registro de Sede{% endblock %}
 
 {% block content %}
-
 <br>
-<h2>Nuestras Sedes</h2>
- <form action="/mision">
-  <label for="codsede">Codigo de la sede</label><br>
-  <input type="number" id="codesede" name="codsede"><br>
-  <label for="desede">Descripcion Sede:</label><br>
-  <input type="text" id="desede" name="desede" value="Sede"><br><br>
-  <input type="submit" value="Agregar Sede">
-</form> 
+<h2>Nuestras Sedes-ANDRES VILLACOB</h2>
+<form action="/sedes" method="POST" class="mb-4">
+  <div class="mb-3">
+    <label for="codsede" class="form-label">Código de la Sede</label>
+    <input type="number" id="codsede" name="codsede" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="desede" class="form-label">Descripción Sede</label>
+    <input type="text" id="desede" name="desede" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="dirsede" class="form-label">Dirección Sede</label>
+    <input type="text" id="dirsede" name="dirsede" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="IdCiudad" class="form-label">ID Ciudad</label>
+    <input type="number" id="IdCiudad" name="IdCiudad" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="Descripcion" class="form-label">Descripción Ciudad</label>
+    <input type="text" id="Descripcion" name="Descripcion" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Agregar Sede</button>
+</form>
+
+<form action="/listasedes" method="GET">
+  <button type="submit" class="btn btn-secondary">Ver Listado de Sedes</button>
+</form>
 {% endblock %}

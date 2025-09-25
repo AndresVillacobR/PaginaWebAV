@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Sedes - Editar{% endblock %}
+
+{% block content %}
+<br>
+<h2>Editar la Sede</h2>
+<form action="/editar/{{ codsede }}" method="POST">
+<label for="codsede">Codigo de la Sede</label><br>
+<input type="number" id="codsede" name="codsede" value="{{ codsede }}" readonly><br><br>
+
+<label for="desede">Descripcion Sede</label><br>
+<input type="text" id="desede" name="desede" value="{{ desede }}"><br><br>
+
+<label for="dirsede">Direccion Sede</label><br>
+<input type="text" id="dirsede" name="dirsede" value="{{ dirsede }}"><br><br><br>
+
+<input type="submit" value="Actualizar Sede">
+</form>
+
+<div class="espaciobotones"></div>
+</form>

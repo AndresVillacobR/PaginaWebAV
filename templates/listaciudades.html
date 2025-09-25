@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado Ciudades-ANDRES VILLACOB{% endblock %}
+
+{% block content %}
+<br>
+<h2>Nuestras ciudades</h2>
+<br>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            
+            <th>ID Ciudad</th> 
+            <th>Descripción Ciudad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ciudad in ciudades %}
+        <tr>
+            <td>{{ ciudad[0] }}</td>
+            <td>{{ ciudad[1] }}</td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
