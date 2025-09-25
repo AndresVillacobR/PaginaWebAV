@@ -1,0 +1,17 @@
+.fusion-logo {
+  background-color: #0d2a52;
+  padding: 10px 0 10px 20px;
+}
+.fusion-logo img {
+  max-width: 220px;
+  height: auto;
+}
+footer {
+  background: #f8f9fa;
+  text-align: center;
+  padding: 20px 0 10px 0;
+  margin-top: 40px;
+  color: #222;
+  font-size: 1rem;
+  border-top: 1px solid #e1e1e1;
+}

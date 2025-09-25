@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title%}Sedes{%endblock%}
+
+{% block content %}
+
+<br>
+<h2>Nuestras Sedes</h2>
+ <form action="/mision">
+  <label for="codsede">Codigo de la sede</label><br>
+  <input type="number" id="codesede" name="codsede"><br>
+  <label for="desede">Descripcion Sede:</label><br>
+  <input type="text" id="desede" name="desede" value="Sede"><br><br>
+  <input type="submit" value="Agregar Sede">
+</form> 
+{% endblock %}
