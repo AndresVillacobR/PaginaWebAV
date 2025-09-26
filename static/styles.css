@@ -3,9 +3,9 @@
 ========================= */
 .fusion-logo {
   background-color: #0d2a52; 
-  padding: 10px 20px;
-  display: flex;
+  padding: 20px 20px;
   align-items: center;
+
 }
 
 .fusion-logo img {
@@ -17,6 +17,15 @@
 .fusion-logo img:hover {
   transform: scale(1.05);
 }
+
+.navbar-nav {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+
+
 
 /* =========================
    📑 TITULOS
