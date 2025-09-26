@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}Listado Ciudades-ANDRES VILLACOB{% endblock %}
+{% block title %}LISTADO CIUDADES{% endblock %}
 
 {% block content %}
 <br>
-<h2>Nuestras ciudades</h2>
+<h2 class="text-center text-uppercase">Nuestras ciudades</h2>
 <br>
-<table class="table table-bordered table-striped">
-    <thead>
+
+<table class="table table-hover table-bordered text-center shadow-sm">
+    <thead class="bg-success text-white text-uppercase">
         <tr>
-            
             <th>ID Ciudad</th> 
             <th>Descripción Ciudad</th>
         </tr>
@@ -19,9 +19,9 @@
         <tr>
             <td>{{ ciudad[0] }}</td>
             <td>{{ ciudad[1] }}</td>
-            
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
 {% endblock %}
